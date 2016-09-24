@@ -60,7 +60,7 @@
           str +="<input type='button' value='Get Photo' onclick='getPhoto();'/>";
           str +="<input type='button' value='Logout' onclick='Logout();'/>";
           document.getElementById("status").innerHTML=str;
-          document.getElementById("response").innerHTML=response;
+          document.getElementById("response").innerHTML=JSON.stringify(response);
  
     });
     }
