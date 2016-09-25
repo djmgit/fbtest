@@ -42,12 +42,12 @@
            if (response.authResponse) 
            {
                 getUserInfo();
-                getFriends();
+                //getFriends();
             } else 
             {
              console.log('User cancelled login or did not fully authorize.');
             }
-         },{scope: 'email,user_photos,user_videos,user_friends'});
+         },{scope: 'email,user_photos,user_videos'});
  
     }
 
