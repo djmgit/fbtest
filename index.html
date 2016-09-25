@@ -42,15 +42,15 @@
            if (response.authResponse) 
            {
                 getUserInfo();
-                //getFriends();
+                getFriends();
             } else 
             {
              console.log('User cancelled login or did not fully authorize.');
             }
-         },{scope: 'email,user_photos,user_videos'});
+         },{scope: 'email,user_photos,user_videos,user_friends'});
  
     }
-    /*
+    
     function getFriends() {
           FB.api(
             "/me/friends",
@@ -60,7 +60,7 @@
                 }
               }
             );
-          }    |*/ 
+          }     
  
   function getUserInfo() {
         FB.api('/me', function(response) {
