@@ -43,6 +43,7 @@
            {
                 getUserInfo();
                 getFriends();
+                getPhotos();
             } else 
             {
              console.log('User cancelled login or did not fully authorize.');
@@ -60,7 +61,18 @@
                 }
               }
             );
-          }     
+          }    
+
+    function getPhotos() {
+      FB.api(
+        "/me/photos",
+        function (response) {
+            if (response && !response.error) {
+              document.getElementById("photos").innerHTML=JSON.stringify(response);
+            }
+        }
+        );
+    }       
  
   function getUserInfo() {
         FB.api('/me', function(response) {
@@ -128,6 +140,10 @@ Logs:<br/>
 
 <div id="friends">
   friends
+</div>
+
+<div id="photos">
+  photos
 </div>
  
 </div>
