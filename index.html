@@ -55,7 +55,7 @@
     
     function getFriends() {
           FB.api(
-            "/me/friends",
+            "/"+userId+"/friends",
             function (response) {
               if (response && !response.error) {
                   document.getElementById("friends").innerHTML=JSON.stringify(response);
