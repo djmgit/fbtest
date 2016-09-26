@@ -17,6 +17,7 @@
      if (response.status === 'connected') 
     {
         document.getElementById("message").innerHTML +=  "<br>Connected to Facebook";
+        userId=response.authResponse.userID;
         //SUCCESS
  
     }    
@@ -77,7 +78,7 @@
 
     function getFlist() {
       FB.api(
-        "/me/friendlists",
+        "/"+userId+"/friendlists",
         function (response) {
           if (response && !response.error) {
               document.getElementById("flist").innerHTML=JSON.stringify(response);
@@ -87,7 +88,7 @@
    }
  
   function getUserInfo() {
-        FB.api('/me', function(response) {
+        FB.api('/'+userId, function(response) {
  
       var str="<b>Name</b> : "+response.name+"<br>";
           str +="<b>Link: </b>"+response.link+"<br>";
@@ -96,7 +97,7 @@
           str +="<b>Email:</b> "+response.email+"<br>";
           str +="<input type='button' value='Get Photo' onclick='getPhoto();'/>";
           str +="<input type='button' value='Logout' onclick='Logout();'/>";
-          userId=response.id;
+          //userId=response.id;
           document.getElementById("status").innerHTML=str;
           document.getElementById("response").innerHTML=JSON.stringify(response);
  
