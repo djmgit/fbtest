@@ -68,7 +68,7 @@
               var str="<ul>";
               for (var i =0;i<data.length;i++) {
                 str+="<li>"+data[i].name+"</li>";
-                str+="<li><img src='"+data.picture.url+"'></li>"
+                str+="<li><img src='"+data.picture.data.url+"'></li>"
               }
               str+="</ul>";
 
@@ -87,15 +87,15 @@
           function (response) {
             if (response && !response.error) {
 
-              /*var data=response.data;
+              var data=response.data;
               var str="<ul>";
               for (var i =0;i<data.length;i++) {
                 str+="<li>"+data[i].name+"</li>";
-                str+="<li><img src='"+data.picture.url+"'></li>"
+                str+="<li><img src='"+data.picture.data.url+"'></li>"
               }
-              str+="</ul>";*/
+              str+="</ul>";
 
-              document.getElementById("list2").innerHTML=JSON.stringify(response);
+              //document.getElementById("list2").innerHTML=JSON.stringify(response);
 
 
                   
