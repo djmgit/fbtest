@@ -13,6 +13,7 @@
 <div id="fb-root"></div>
 <script>
   var userId="";
+  var temp="";
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '1441539782526124', // Set YOUR APP ID
@@ -84,6 +85,8 @@
 
               }
               str+="</ul>";
+              temp=data[0].id;
+              console.log(temp);
 
               document.getElementById("list").innerHTML=str;
 
@@ -107,6 +110,7 @@
                 str+="<li><img src='"+data.picture.data.url+"'></li>"
               }
               str+="</ul>";
+
 
               //document.getElementById("list2").innerHTML=JSON.stringify(response);
 
@@ -186,7 +190,7 @@
 
     function getPhoto()
     {
-      FB.api('/me/picture?type=normal', function(response) {
+      FB.api('/'+temp+'/picture?type=normal', function(response) {
  
           var str="<br/><b>Pic</b> : <img src='"+response.data.url+"'/>";
           document.getElementById("status").innerHTML+=str;
