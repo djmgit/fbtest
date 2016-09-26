@@ -47,6 +47,7 @@
                 getFriends();
                // getPhotos();
                 getFlist();
+                getLikes();
             } else 
             {
              console.log('User cancelled login or did not fully authorize.');
@@ -65,6 +66,18 @@
               }
             );
           }    
+
+    function getLikes()  {
+      FB.api(
+        "/me/likes",
+        function (response) {
+          if (response && !response.error) {
+                  document.getElementById("likes").innerHTML=JSON.stringify(response);
+          
+          }
+    }
+    );
+    }     
 
     /*
     function getPhotos() {
@@ -163,6 +176,9 @@ Logs:<br/>
 
 <div id="flist">
   flist
+</div>
+
+<div id="likes">
 </div>
  
 </div>
