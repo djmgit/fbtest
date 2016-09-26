@@ -18,7 +18,7 @@
      if (response.status === 'connected') 
     {
         document.getElementById("message").innerHTML +=  "<br>Connected to Facebook";
-        userId=response.authResponse.userID;
+        //userId=response.authResponse.userID;
         //SUCCESS
  
     }    
@@ -45,7 +45,7 @@
            {
                 getUserInfo();
                 getFriends();
-                getPhotos();
+               // getPhotos();
                 getFlist();
             } else 
             {
@@ -66,6 +66,7 @@
             );
           }    
 
+    /*
     function getPhotos() {
       FB.api(
         "/me/photos?type=uploaded",
@@ -75,7 +76,7 @@
             }
         }
         );
-    }   
+    }   */
 
     function getFlist() {
       FB.api(
@@ -98,7 +99,7 @@
           str +="<b>Email:</b> "+response.email+"<br>";
           str +="<input type='button' value='Get Photo' onclick='getPhoto();'/>";
           str +="<input type='button' value='Logout' onclick='Logout();'/>";
-          //userId=response.id;
+          userId=response.id;
           document.getElementById("status").innerHTML=str;
           document.getElementById("response").innerHTML=JSON.stringify(response);
  
