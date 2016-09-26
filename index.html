@@ -68,11 +68,11 @@
               var str="<ul>";
               for (var i =0;i<data.length;i++) {
                 str+="<li>"+data[i].name+"</li>";
-                str+="<li><img src='"+data.picture.data.url+"'></li>"
+                //str+="<li><img src='"+data.picture.data.url+"'></li>"
               }
               str+="</ul>";
 
-              document.getElementById("list").innerHTML=str;
+              document.getElementById("list").innerHTML=JSON.stringify(response);
 
 
                   
