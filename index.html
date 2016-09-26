@@ -9,7 +9,8 @@
       channelUrl : 'https://djmgit.github.io/fbtest/', // Channel File
       status     : true, // check login status
       cookie     : true, // enable cookies to allow the server to access the session
-      xfbml      : true  // parse XFBML
+      xfbml      : true,  // parse XFBML
+      oauth      : true
     });
  
     FB.Event.subscribe('auth.authResponseChange', function(response) 
@@ -44,7 +45,7 @@
            {
                 getUserInfo();
                 getFriends();
-                //getPhotos();
+                getPhotos();
                 getFlist();
             } else 
             {
@@ -56,7 +57,7 @@
     
     function getFriends() {
           FB.api(
-            "/"+userId+"/friends",
+            "/me/friends",
             function (response) {
               if (response && !response.error) {
                   document.getElementById("friends").innerHTML=JSON.stringify(response);
@@ -65,20 +66,20 @@
             );
           }    
 
-    /*function getPhotos() {
+    function getPhotos() {
       FB.api(
-        "/me/photos",
+        "/me/photos?type=uploaded",
         function (response) {
             if (response && !response.error) {
               document.getElementById("photos").innerHTML=JSON.stringify(response);
             }
         }
         );
-    }   */ 
+    }   
 
     function getFlist() {
       FB.api(
-        "/"+userId+"/friendlists",
+        "/me/friendlists",
         function (response) {
           if (response && !response.error) {
               document.getElementById("flist").innerHTML=JSON.stringify(response);
@@ -88,7 +89,7 @@
    }
  
   function getUserInfo() {
-        FB.api('/'+userId, function(response) {
+        FB.api("/me", function(response) {
  
       var str="<b>Name</b> : "+response.name+"<br>";
           str +="<b>Link: </b>"+response.link+"<br>";
