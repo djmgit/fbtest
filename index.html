@@ -48,13 +48,25 @@
                // getPhotos();
                 //getFlist();
                 getLikes();
+                getTfriends();
             } else 
             {
              console.log('User cancelled login or did not fully authorize.');
             }
-         },{scope: 'email,user_photos,user_videos,user_friends,read_custom_friendlists'});
+         },{scope: 'email,user_photos,user_videos,user_friends,read_custom_friendlists','taggable_friends'});
  
     }
+
+    function getTfriends() {
+      FB.api(
+          "/me/taggable_friends",
+          function (response) {
+            if (response && !response.error) {
+                  document.getElementById("tf").innerHTML=JSON.stringify(response);
+            }
+          }
+        );
+      }
     
     function getFriends() {
           FB.api(
@@ -179,6 +191,9 @@ Logs:<br/>
 </div>
 
 <div id="likes">
+</div>
+
+<div id="tf">
 </div>
  
 </div>
