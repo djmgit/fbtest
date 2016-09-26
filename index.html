@@ -1,5 +1,21 @@
 <html>
 <head>
+
+   <title>Guess Who!!</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script type="text/javascript" src="js/script.js"></script>
+  <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
+  <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Galada">
+  <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Cormorant Garamond">  
+
   <style type="text/css">
     
     img {
@@ -7,12 +23,14 @@
       height:100px;
     }
   </style>
+
+
 </head>
 
 <body>
 <div id="fb-root"></div>
 <script>
-  var userId="";
+  /*var userId="";
   var temp="";
   window.fbAsyncInit = function() {
     FB.init({
@@ -120,52 +138,7 @@
           }
         );
       }
-    /*
-    function getFriends() {
-          FB.api(
-            "/me/friends",
-            function (response) {
-              if (response && !response.error) {
-                  document.getElementById("friends").innerHTML=JSON.stringify(response);
-                }
-              }
-            );
-          }    */
-
-    /*function getLikes()  {
-      FB.api(
-        "/me/likes",
-        function (response) {
-          if (response && !response.error) {
-                  document.getElementById("likes").innerHTML=JSON.stringify(response);
-          
-          }
-    }
-    );
-    } */    
-
-    /*
-    function getPhotos() {
-      FB.api(
-        "/me/photos?type=uploaded",
-        function (response) {
-            if (response && !response.error) {
-              document.getElementById("photos").innerHTML=JSON.stringify(response);
-            }
-        }
-        );
-    }   */
-
-    /*function getFlist() {
-      FB.api(
-        "/me/friendlists",
-        function (response) {
-          if (response && !response.error) {
-              document.getElementById("flist").innerHTML=JSON.stringify(response);
-          }
-        }
-      );
-   }*/
+    
  
   function getUserInfo() {
         FB.api("/me", function(response) {
@@ -190,7 +163,7 @@
 
     function getPhoto()
     {
-      FB.api('/'+temp+'/picture?type=normal', function(response) {
+      FB.api('/me/picture?type=normal', function(response) {
  
           var str="<br/><b>Pic</b> : <img src='"+response.data.url+"'/>";
           document.getElementById("status").innerHTML+=str;
@@ -210,9 +183,10 @@
      js = d.createElement('script'); js.id = id; js.async = true;
      js.src = "//connect.facebook.net/en_US/all.js";
      ref.parentNode.insertBefore(js, ref);
-   }(document));
+   }(document));*/
  
 </script>
+<!--
 <div align="center">
 <h2>Facebook OAuth Javascript Demo</h2>
  
@@ -257,6 +231,41 @@ Logs:<br/>
 
 
  
+</div> -->
+<div id="main">
+  <div class="container">
+
+    <div id="head">
+      Click below to find your two ultimate fans who can do anything for you !!
+    </div>
+    <div id="login">
+      <button class="button"><span>Login with Facebook </span></button>
+    </div>
+    <div class="jumbotron" id="jumbo">
+      <div class="container">
+        <div id="result">
+           <div class="row">
+            <div class="col-sm-4">
+              <div class="card">  
+                <img id="person1" class="img-responsive" src="images/q1.png" alt="Chania"> 
+              </div>  
+            </div>
+            <div  class="col-sm-4">
+              <div class="card">
+                 <img id="me" class="img-responsive" src="images/q2.png" alt="Chania"> 
+              </div>   
+            </div>
+              
+            <div class="col-sm-4">
+              <div class="card">
+                <img id="person2" class="img-responsive" src="images/q1.png" alt="Chania"> 
+              </div>  
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>  
+  </div>  
 </div>
 </body>
 </html>
