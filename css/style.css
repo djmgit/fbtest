@@ -24,8 +24,8 @@
     height:	250px;
     text-align: center;
     padding-left: 20px;
-    display: block;
-    margin: 0 auto;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 /* On mouse-over, add a deeper shadow */
