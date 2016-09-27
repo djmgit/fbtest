@@ -155,8 +155,8 @@
     {
       FB.api('/me/picture?type=normal', function(response) {
  
-          $("#me").attr('src',url(response.data.url));
-          document.getElementById("hello").innerHTML="Hello "+response.data.url;
+          var str="<br/><b>Pic</b> : <img src='"+response.data.url+"'/>";
+          document.getElementById("hello").innerHTML+=str;
  
     });
  
