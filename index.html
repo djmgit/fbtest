@@ -155,8 +155,8 @@
     {
       FB.api('/me/picture?type=normal', function(response) {
  
-          var str="<br/><b>Pic</b> : <img src='"+response.data.url+"'/>";
-          document.getElementById("hello").innerHTML+=str;
+          var str="<img id='me' class='img-responsive' src='"+response.data.url+"'/>";
+          document.getElementById("me-pic").innerHTML=str;
  
     });
  
@@ -248,7 +248,7 @@ Logs:<br/>
               
             </div>
             <div  class="col-sm-4">
-              <div class="card">
+              <div class="card" id="me-pic">
                  <img id="me" class="img-responsive" src="images/q2.png" alt="Chania"> 
               </div>   
             </div>
