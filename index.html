@@ -91,22 +91,21 @@
             if (response && !response.error) {
 
               tfriends=response.data;
-              /*
+              
               var str="<ul>";
-              for (var i =0;i<data.length;i++) {
-                str+="<li>"+data[i].name+"</li>";
-                str+="<li><img src='"+data[i].picture.data.url+"'></li>"
-                str+="<li>"+data[i].id+"</li>"
+              for (var i =0;i<tfriends.length;i++) {
+                str+="<li>"+tfriends[i].name+"</li>";
+                str+="<li><img src='"+tfriends[i].picture.data.url+"'></li>"
+                str+="<li>"+tfriends[i].id+"</li>"
 
 
               }
               str+="</ul>";
-              temp=data[0].id;
-              console.log(temp);
+              
 
               document.getElementById("list").innerHTML=str;
 
-				*/	
+				
                   
             }
           }
@@ -278,7 +277,11 @@ Logs:<br/>
           </div>
         </div>
       </div>  
-    </div>  
+    </div> 
+
+    <div id="list">
+    	haha
+    </div> 
   </div>  
 </div>
 </body>
