@@ -154,6 +154,9 @@
         var str="<img id='person2' class='img-responsive img-circle' src='"+friends[num2].picture.data.url+"'/>";
         document.getElementById("person2-pic").innerHTML=str;
 
+        $("#person1-info").html("he can do every thing for you!!");
+        $("#person2-info").html("he is too good");
+
 
 
       }
@@ -274,27 +277,31 @@ Logs:<br/>
               <div class="card" id="person1-pic">  
                 <img id="person1" class="img-responsive" src="images/q1.png" alt="Chania"> 
               </div>  
+              <div id="person1-info">
+
+              </div>
               
             </div>
             <div  class="col-sm-4">
               <div class="card" id="me-pic">
                  <img id="me" class="img-responsive" src="images/q2.png" alt="Chania"> 
               </div>   
+
             </div>
               
             <div class="col-sm-4">
               <div class="card" id="person2-pic">
                 <img id="person2" class="img-responsive" src="images/q1.png" alt="Chania"> 
-              </div>  
+              </div> 
+              <div id="person2-info">
+              </div> 
             </div>
           </div>
         </div>
       </div>  
     </div> 
 
-    <div id="list">
-    	haha
-    </div> 
+   
   </div>  
 </div>
 </body>

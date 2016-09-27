@@ -132,3 +132,21 @@
   font-family: verdana;
   text-shadow: 2px 2px 2px #FFFFFF;
 }
+
+#person1-info {
+  text-align: center;
+  font-size: 22px;
+  font-style: italic;
+  font-family:  verdana;
+  text-shadow: 2px 2px 2px #FFFFFF;
+
+}
+
+#person2-info {
+  text-align: center;
+  font-size: 22px;
+  font-style: italic;
+  font-family:  verdana;
+  text-shadow: 2px 2px 2px #FFFFFF;
+
+}
