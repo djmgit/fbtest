@@ -11,6 +11,8 @@
   <script type="text/javascript" src="js/script.js"></script>
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+
   <link rel="stylesheet" type="text/css"
           href="https://fonts.googleapis.com/css?family=Tangerine">
   <link rel="stylesheet" type="text/css"
@@ -18,21 +20,13 @@
   <link rel="stylesheet" type="text/css"
           href="https://fonts.googleapis.com/css?family=Cormorant Garamond">  
 
-  <style type="text/css">
-    
-    img {
-      width:100px;
-      height:100px;
-    }
-  </style>
-
-
+  
 </head>
 
 <body>
 <div id="fb-root"></div>
 <script>
-  /*var userId="";
+  var userId="";
   var temp="";
   window.fbAsyncInit = function() {
     FB.init({
@@ -48,19 +42,19 @@
     {
      if (response.status === 'connected') 
     {
-        document.getElementById("message").innerHTML +=  "<br>Connected to Facebook";
+        document.getElementById("connection-status").innerHTML =  "<br>Connected to Facebook";
         //userId=response.authResponse.userID;
         //SUCCESS
  
     }    
     else if (response.status === 'not_authorized') 
     {
-        document.getElementById("message").innerHTML +=  "<br>Failed to Connect";
+        document.getElementById("connection-status").innerHTML =  "<br>Failed to Connect";
  
         //FAILED
     } else 
     {
-        document.getElementById("message").innerHTML +=  "<br>Logged Out";
+        document.getElementById("connection-status").innerHTML =  "<br>Logged Out";
  
         //UNKNOWN ERROR
     }
@@ -79,8 +73,8 @@
                // getPhotos();
                 //getFlist();
                 //getLikes();
-                getTfriends();
-                getIfriends();
+                //getTfriends();
+                //getIfriends();
             } else 
             {
              console.log('User cancelled login or did not fully authorize.');
@@ -145,16 +139,10 @@
   function getUserInfo() {
         FB.api("/me", function(response) {
  
-      var str="<b>Name</b> : "+response.name+"<br>";
-          str +="<b>Link: </b>"+response.link+"<br>";
-          str +="<b>Username:</b> "+response.username+"<br>";
-          str +="<b>id: </b>"+response.id+"<br>";
-          str +="<b>Email:</b> "+response.email+"<br>";
-          str +="<input type='button' value='Get Photo' onclick='getPhoto();'/>";
-          str +="<input type='button' value='Logout' onclick='Logout();'/>";
-          userId=response.id;
-          document.getElementById("status").innerHTML=str;
-          document.getElementById("response").innerHTML=JSON.stringify(response);
+      
+          document.getElementById("hello").innerHTML="Hello "+response.name;
+          getPhoto();
+          
  
     });
     }
@@ -167,8 +155,7 @@
     {
       FB.api('/me/picture?type=normal', function(response) {
  
-          var str="<br/><b>Pic</b> : <img src='"+response.data.url+"'/>";
-          document.getElementById("status").innerHTML+=str;
+          $("#me").attr('src','response.data.url');
  
     });
  
@@ -185,7 +172,7 @@
      js = d.createElement('script'); js.id = id; js.async = true;
      js.src = "//connect.facebook.net/en_US/all.js";
      ref.parentNode.insertBefore(js, ref);
-   }(document));*/
+   }(document));
  
 </script>
 <!--
@@ -243,6 +230,12 @@ Logs:<br/>
     <div id="login">
       <button class="button"><span>Login with Facebook </span></button>
     </div>
+    <div id="connection-status">
+
+    </div>
+    <div id="hello">
+
+    </div>
     <div class="jumbotron" id="jumbo">
       <div class="container">
         <div id="result">
@@ -251,6 +244,7 @@ Logs:<br/>
               <div class="card">  
                 <img id="person1" class="img-responsive" src="images/q1.png" alt="Chania"> 
               </div>  
+              
             </div>
             <div  class="col-sm-4">
               <div class="card">
