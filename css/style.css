@@ -164,7 +164,8 @@
   color:  #311b92;
   text-shadow: 2px 2px 2px #FFFFFF;
   margin-top: 10px;
-  margin-left:  -10px;
+  display:block;
+  float:left;
 }
 
 #info2 {
@@ -175,5 +176,6 @@
   color:  #311b92;
   text-shadow: 2px 2px 2px #FFFFFF;
   margin-top: 10px;
-  margin-left:  -10px;
+  display: block;
+  float: left;
 }
