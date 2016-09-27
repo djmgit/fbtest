@@ -135,8 +135,8 @@
 
 #person1-info {
   text-align: center;
-  font-size: 22px;
-  font-style: italic;
+  font-size: 20px;
+  
   font-family:  verdana;
   text-shadow: 2px 2px 2px #FFFFFF;
 
@@ -144,9 +144,25 @@
 
 #person2-info {
   text-align: center;
-  font-size: 22px;
-  font-style: italic;
+  font-size: 20px;
+  
   font-family:  verdana;
   text-shadow: 2px 2px 2px #FFFFFF;
 
+}
+
+#info1 {
+  text-align: center;
+  font-size: 16px;
+  
+  font-family:  verdana;
+  text-shadow: 2px 2px 2px #FFFFFF;
+}
+
+#info2 {
+  text-align: center;
+  font-size: 16px;
+  
+  font-family:  verdana;
+  text-shadow: 2px 2px 2px #FFFFFF;
 }
