@@ -32,6 +32,8 @@
   var ifriends=[]
   var tfriends=[];
 
+  
+
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '1441539782526124', // Set YOUR APP ID
@@ -174,7 +176,7 @@
         FB.api("/me", function(response) {
  
       
-          document.getElementById("hello").innerHTML="Hello "+response.name;
+          document.getElementById("hello").innerHTML="Hello "+response.name+"!!";
           getPhoto();
           
  
@@ -210,52 +212,7 @@
    }(document));
  
 </script>
-<!--
-<div align="center">
-<h2>Facebook OAuth Javascript Demo</h2>
- 
-<div id="status">
- Click on Below Image to start the demo: <br/>
-<img src="fb_login.png" style="cursor:pointer;" onclick="Login()"/>
-</div>
- 
-<br/><br/><br/><br/><br/>
- 
-<div id="message">
-Logs:<br/>
-</div>
 
-<div id="response">
-  response
-</div>
-
-<div id="friends">
-  friends
-</div>
-
-<div id="photos">
-  
-</div>
-
-<div id="flist">
-  flist
-</div>
-
-<div id="likes">
-</div>
-
-<div id="tf">
-</div>
-
-<div id="list">
-</div>
-
-<div id="list2">
-</div>
-
-
- 
-</div> -->
 <div id="main">
   <div class="container">
 
