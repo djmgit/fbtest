@@ -28,6 +28,9 @@
 <script>
   var userId="";
   var temp="";
+  
+  var ifriends=[]
+  var tfriends=[];
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '1441539782526124', // Set YOUR APP ID
@@ -69,12 +72,10 @@
            if (response.authResponse) 
            {
                 getUserInfo();
-                //getFriends();
-               // getPhotos();
-                //getFlist();
-                //getLikes();
-                //getTfriends();
-                //getIfriends();
+                
+                getTfriends();
+                getIfriends();
+                generateResult();
             } else 
             {
              console.log('User cancelled login or did not fully authorize.');
@@ -89,7 +90,8 @@
           function (response) {
             if (response && !response.error) {
 
-              var data=response.data;
+              var tfriends=response.data;
+              /*
               var str="<ul>";
               for (var i =0;i<data.length;i++) {
                 str+="<li>"+data[i].name+"</li>";
@@ -104,7 +106,7 @@
 
               document.getElementById("list").innerHTML=str;
 
-
+				*/	
                   
             }
           }
@@ -117,13 +119,8 @@
           function (response) {
             if (response && !response.error) {
 
-              var data=response.data;
-              var str="<ul>";
-              for (var i =0;i<data.length;i++) {
-                str+="<li>"+data[i].name+"</li>";
-                str+="<li><img src='"+data.picture.data.url+"'></li>"
-              }
-              str+="</ul>";
+              var ifriends=response.data;
+              
 
 
               //document.getElementById("list2").innerHTML=JSON.stringify(response);
@@ -133,6 +130,24 @@
             }
           }
         );
+      }
+
+      function generateResult() {
+      	var friends=ifriends.concat(tfriends);
+      	var str="<img id='person1' class='img-responsive img-rounded' src='"+friends[0].picture.data.url+"'/>";
+        document.getElementById("person1-pic").innerHTML=str;
+
+        var str="<img id='person2' class='img-responsive img-rounded' src='"+friends[1].picture.data.url+"'/>";
+        document.getElementById("person2-pic").innerHTML=str;
+
+
+
+      }
+
+      function getRandom(max_num) {
+
+      	var num=Math.random()*(max_num-0);
+      	return num;
       }
     
  
@@ -242,7 +257,7 @@ Logs:<br/>
         <div id="result">
            <div class="row">
             <div class="col-sm-4">
-              <div class="card">  
+              <div class="card" id="person1-pic">  
                 <img id="person1" class="img-responsive" src="images/q1.png" alt="Chania"> 
               </div>  
               
@@ -254,7 +269,7 @@ Logs:<br/>
             </div>
               
             <div class="col-sm-4">
-              <div class="card">
+              <div class="card" id="person2-pic">
                 <img id="person2" class="img-responsive" src="images/q1.png" alt="Chania"> 
               </div>  
             </div>
