@@ -156,7 +156,7 @@
       FB.api('/me/picture?type=normal', function(response) {
  
           $("#me").attr('src',url(response.data.url));
-          $("hello").html(response.data.url);
+          $("#hello").html(response.data.url);
  
     });
  
