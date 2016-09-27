@@ -133,12 +133,12 @@
 
       function generateResult() {
       	var friends=ifriends.concat(tfriends);
-      	var str="<img id='person1' class='img-responsive img-rounded' src='"+friends[0].picture.data.url+"'/>";
+      	var str="<img id='person1' class='img-responsive img-thumbnail' src='"+tfriends[0].picture.data.url+"'/>";
         document.getElementById("person1-pic").innerHTML=str;
 
-        console.log(friends[0].picture.data.url);
+        //console.log(friends[0].picture.data.url);
 
-        var str="<img id='person2' class='img-responsive img-rounded' src='"+friends[1].picture.data.url+"'/>";
+        var str="<img id='person2' class='img-responsive img-thumbnail' src='"+tfriends[1].picture.data.url+"'/>";
         document.getElementById("person2-pic").innerHTML=str;
 
 
